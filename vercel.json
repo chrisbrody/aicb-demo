@@ -1,12 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "build" }
-    }
-  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
   "routes": [
     {
       "src": "/api/(.*)",
@@ -16,8 +11,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "env": {
-    "HUGGING_FACE_TOKEN": "@hugging_face_token"
-  }
+  ]
 }
